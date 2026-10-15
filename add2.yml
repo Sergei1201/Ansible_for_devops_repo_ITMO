@@ -1,7 +1,7 @@
 - hosts: all
   become: true
   tasks:
-    - name: Create a new user and generate SSH key for him/her
+    - name: Create a new user and generate a private SSH key for him/her (on a remote Linux machine of course)
       ansible.builtin.user:
         name: sokolov
         groups: sudo
