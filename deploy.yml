@@ -1,0 +1,15 @@
+---
+- name: Create dir and copy file
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create directory
+      file:
+        path: ~/mydir
+        state: directory
+
+    - name: Copy local file into the directory
+      copy:
+        src: /tmp/test.txt
+        dest: ~/mydir/tst.txt
+
