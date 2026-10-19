@@ -1,0 +1,6 @@
+- hosts: all
+  become: true
+  tasks:
+    - user: {name: sokolov, groups: sudo, append: yes}
+    - authorized_key: {user: sokolov, key: "{{lookup('file','user_key.pub')}}"}
+  

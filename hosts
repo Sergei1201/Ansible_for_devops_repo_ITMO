@@ -1,6 +1,5 @@
-[fedora]
+[linux]
 fedora ansible_host=84.201.151.140
-[ubuntu]
 ubuntu ansible_host=93.77.162.53
 [all:vars]
 ansible_user=student
