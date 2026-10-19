@@ -1,0 +1,20 @@
+---
+- name: Install custom facts on Fedora
+  hosts: fedora
+  become: true
+
+  tasks:
+    - name: Make sure facts.d directory exists
+      ansible.builtin.file:
+        path: /etc/ansible/facts.d
+        state: directory
+        mode: "0755"
+
+    - name: Install Custom facts file
+      ansible.builtin.copy:
+        content: |
+          [custom]
+          foo=bar
+        dest: /etc/ansible/facts.d/myfact.fact
+        mode: "0644"
+

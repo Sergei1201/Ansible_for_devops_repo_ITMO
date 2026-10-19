@@ -1,0 +1,13 @@
+---
+- name: Read custom fact on Fedora
+  hosts: fedora
+
+  tasks:
+    - name: Gather facts including custom facts
+      ansible.builtin.setup:
+        filter: ansible_local
+
+
+    - name: Show custom facts
+      ansible.builtin.debug:
+        var: ansible_local
