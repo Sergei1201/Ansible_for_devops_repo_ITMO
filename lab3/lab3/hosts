@@ -1,0 +1,6 @@
+[linux]
+fedora ansible_host=84.201.151.140
+ubuntu ansible_host=93.77.162.53
+[all:vars]
+ansible_user=student
+ansible_ssh_private_key_file=autumn2026
