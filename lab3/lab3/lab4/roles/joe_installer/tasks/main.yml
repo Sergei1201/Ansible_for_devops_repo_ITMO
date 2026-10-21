@@ -1,0 +1,17 @@
+---
+- name: Output family of Linux OS
+  ansible.builtin.debug:
+    msg: "The system belongs to the family: {{ ansible_facts['os_family'] }}"
+
+- name: Install joe using apt (for Debian/Ubuntu)
+  ansible.builtin.apt:
+    name: "{{ joe_package_name }}"
+    state: "{{ joe_package_state }}"
+    update_cache: "{{ joe_update_cache }}"
+  when: ansible_facts['os_family'] == "Ubuntu"
+
+- name: Install joe using dnf/yum (for Fedora)
+  ansible.builtin.dnf:
+    name: "{{ joe_package_name }}"
+    state: "{{ joe_package_state }}"
+  when: ansible_facts['os_family'] == "Fedora"

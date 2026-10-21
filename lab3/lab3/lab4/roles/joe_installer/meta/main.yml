@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  role_name: joe_installer
+  author: sokolov_sergei
+  description: Text processor installation on Ubuntu and Fedora
+  license: MIT
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+  galaxy_tags:
+    - joe
+    - editor
+    - packages
+dependencies: []
